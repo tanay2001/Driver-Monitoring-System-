@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "382625234312",
+    "firebase_url": "https://driver-behaviour-6aefe.firebaseio.com",
+    "project_id": "driver-behaviour-6aefe",
+    "storage_bucket": "driver-behaviour-6aefe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382625234312:android:f0d2c993ea72f890aa0e3d",
+        "android_client_info": {
+          "package_name": "com.example.driverbehaviour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382625234312-0vanvunstv0ueqotgnlf5l6dqmdh7tan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.driverbehaviour",
+            "certificate_hash": "f7fafa29fc4c00072cf5d140d1bf8f4e17664c41"
+          }
+        },
+        {
+          "client_id": "382625234312-32n0ohvjnigtqvbggopf5rrk4gki7ajv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt2AEL_yFGoFkZ_0pONgLuuETWX9V4WiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382625234312-32n0ohvjnigtqvbggopf5rrk4gki7ajv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
