@@ -9,4 +9,4 @@ It consists of the final model we have shortlisted after comparing the performan
 It consists of the deployment of the model via TF-Lite(under progress)
 
 
-for information regarding the various trials/approaches we performed [driver analysis](https://github.com/Vishwajit-hegde/Driver-Performance-Analysis)
+for information regarding the various trials/approaches we performed visit [driver analysis](https://github.com/Vishwajit-hegde/Driver-Performance-Analysis)
