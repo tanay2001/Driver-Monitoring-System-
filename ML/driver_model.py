@@ -4,7 +4,7 @@ class Driver:
   def __init__(self, window, strategy,metrics,model_path=None, convert_lite = False):
     self.window = window
     self.path = model_path
-
+    self.counter =0
     if metrics =='auc':
         self.metrics = tf.keras.metrics.AUC(name='auc')
     elif metrics =='acc':
@@ -111,4 +111,14 @@ class Driver:
         return model
         
     def save(self):
+      self.counter +=1
       tensorflow.saved_model.save(self.model,self.path) 
+    def convert(self):
+      if self.counter==0:
+        print('First save the model')
+      else:
+        converter = tf.lite.TFLiteConverter.from_saved_model(self.path)
+        converter.allow_custom_ops = True
+        tflite_model = converter.convert()
+        with open(self.path + '/model.tflite', 'wb') as f:
+          f.write(tflite_model)
