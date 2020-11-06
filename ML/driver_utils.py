@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import os
 import tensorflow as tf
+import keras.backend as K
 from matplotlib import pyplot as plt
 
 def preprocessing(series,window_size, batch_size):
@@ -14,29 +15,35 @@ def preprocessing(series,window_size, batch_size):
 
 def train_format(path):
     df = pd.read_csv(path)
-    df.columns =['timedate','time','X_acc','Y_acc','Z_acc','X_gyr','Y_gyr','Z_gyr','label']
+    df.columns =['index','timedate','time','X_acc','Y_acc','Z_acc','label','device','s','s1','X_gyr','Y_gyr','Z_gyr','s2','s3']
+    df  = df[['timedate','time','X_acc','Y_acc','Z_acc','X_gyr','Y_gyr','Z_gyr','label']]
     df.timedate = pd.to_datetime(df.timedate)
     df['label'] = df.label.apply(lambda x : 0 if x in ['evento_nao_agressivo',0] else 1)
     return df
 
 def test_format(path):
     df = pd.read_csv(path)
-    df.columns =['timedate','time','X_acc','Y_acc','Z_acc','X_gyr','Y_gyr','Z_gyr','label']
+    df.columns =['index','timedate','time','X_acc','Y_acc','Z_acc','label','device','s','s1','X_gyr','Y_gyr','Z_gyr','s2','s3']
+    df  = df[['timedate','time','X_acc','Y_acc','Z_acc','X_gyr','Y_gyr','Z_gyr','label']]
     df.timedate = pd.to_datetime(df.timedate)
     df['label'] = df.label.apply(lambda x : 0 if x in ['evento_nao_agressivo',0] else 1)
     return df
 
 def get_traindata(window, batch,train_path):
-    train = train_format(path)
+    train = train_format(train_path)
     data= preprocessing(train[['X_acc','Y_acc','X_gyr','Y_gyr','Z_gyr','label']].values,window,batch)
     return data
 
 
 def get_testdata(window, batch,test_path):
-    test = test_format(path)
+    test = test_format(test_path)
     data= preprocessing(test[['X_acc','Y_acc','X_gyr','Y_gyr','Z_gyr','label']].values,window,batch)
     return data
 
 def show_results(history,metrics):
     plt.plot(history.history['{}'.format(metrics)][2:], color ='blue')
     plt.plot(history.history['{}'.format(metrics)][2:], color ='orange')
+
+def switch_k_backend_device():
+    if K.backend() == "tensorflow":
+        os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
