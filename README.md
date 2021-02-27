@@ -7,7 +7,7 @@ It consists of the final model we have shortlisted after comparing the performan
 
 **Android**
 It consists of the deployment of the model via TF-Lite(under progress)
-![alt text](https://github.com/tanay2001/Driver-Monitoring-System-/blob/master/android%20app/UAH.png)
+
 
 
 for information regarding the various trials/approaches we performed visit [driver analysis](https://github.com/Vishwajit-hegde/Driver-Performance-Analysis)
