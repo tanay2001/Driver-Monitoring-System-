@@ -1,6 +1,7 @@
 # Driver-Monitoring-System-
 
 Building a data oriented product to identify rash driving patterns by uisng high frequency Telemetry data, and provide early warnings in order to reduce fatalities caused due to road accidents
+![alt text](https://github.com/tanay2001/Driver-Monitoring-System-/blob/master/approach.png)
 
 **ML**
 It consists of the final model we have shortlisted after comparing the performance of several models(mainly XGBoost,ConvNets /Lstms) on the benchmark datasets
